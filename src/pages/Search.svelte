@@ -1,4 +1,6 @@
 <script lang="ts">
+  import axios from "axios";
+
   let apiKey: string = "";
   let url: string = "";
   let result = [];
