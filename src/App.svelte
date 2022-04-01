@@ -7,15 +7,15 @@
 
   const routes = {
     "/": Home,
-    "/search": Search,
-    "/view": View,
+    "/search/*": Search,
+    "/view/*": View,
   };
 </script>
 
-<main>
+<div>
   <Header />
   <Router {routes} />
-</main>
+</div>
 
 <style lang="scss" module>
   @import "./style";

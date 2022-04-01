@@ -1,23 +1,24 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { parse } from "qs";
   import { querystring } from "svelte-spa-router";
   import YouTube from "svelte-youtube";
-
-  $: params = parse($querystring);
+  import axios from "axios";
 
   const options = {
-    height: "390",
-    width: "640",
     playerVars: {
       autoplay: 1,
+      rel: 0,
     },
   };
+  const movie = {
+    title: "",
+  };
 
-  function onReady(event) {
-    event.target.pauseVideo();
-  }
+  onMount(() => {});
 </script>
 
 <main>
-  <YouTube videoId={params.id} {options} on:ready={onReady} />
+  <YouTube videoId={parse($querystring).id} {options} />
+  <div />
 </main>

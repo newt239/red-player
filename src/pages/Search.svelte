@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { link } from "svelte-spa-router";
   import axios from "axios";
 
   let apiKey: string = window.localStorage.getItem("apiKey");
@@ -22,7 +23,7 @@
   <input type="button" on:click={search} value="検索" />
   <div>
     {#each result as item}
-      <a href={`/view?id=${item.id.videoId}`}>
+      <a href={`/view/?id=${item.id.videoId}`} use:link>
         <h4>{item.snippet.title}</h4>
         <img
           src={item.snippet.thumbnails.high.url}
