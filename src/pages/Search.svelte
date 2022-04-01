@@ -13,38 +13,16 @@
 </script>
 
 <main>
-  <h1>Search Youtube movies</h1>
-  <h2>api key</h2>
+  <h2>Search Youtube movies</h2>
+  <h3>api key</h3>
   <input type="text" bind:value={apiKey} />
-  <h2>keyword</h2>
+  <h3>keyword</h3>
   <input type="url" bind:value={keyword} />
   <input type="button" on:click={search} value="検索" />
   <div>
     {#each result as item}
-      <h3>{item.snippet.title}</h3>
+      <h4>{item.snippet.title}</h4>
       <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
     {/each}
   </div>
 </main>
-
-<style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-</style>

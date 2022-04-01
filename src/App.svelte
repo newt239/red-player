@@ -1,5 +1,6 @@
 <script lang="ts">
   import Router from "svelte-spa-router";
+  import Header from "./components/Header.svelte";
   import Home from "./pages/Home.svelte";
   import Search from "./pages/Search.svelte";
 
@@ -10,5 +11,6 @@
 </script>
 
 <main>
+  <Header />
   <Router {routes} />
 </main>
