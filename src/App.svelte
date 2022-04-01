@@ -14,3 +14,7 @@
   <Header />
   <Router {routes} />
 </main>
+
+<style lang="scss" module>
+  @import "./style";
+</style>

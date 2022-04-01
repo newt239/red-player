@@ -7,6 +7,9 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 
+const cssModules = require('svelte-preprocess-cssmodules');
+const { asMarkupPreprocessor } = require('svelte-as-markup-preprocessor');
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -40,10 +43,21 @@ export default {
 	},
 	plugins: [
 		svelte({
-			preprocess: sveltePreprocess({ sourceMap: !production }),
+			preprocess: [
+				asMarkupPreprocessor([
+					sveltePreprocess({ sourceMap: !production }),
+				]),
+				cssModules(),
+			],
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
+				dev: !production,
+			},
+			onwarn: (warning, handler) => {
+				const { code, frame } = warning;
+				if (code === "css-unused-selector")
+					return;
+				handler(warning);
 			}
 		}),
 		// we'll extract any component CSS out into
