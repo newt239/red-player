@@ -5,11 +5,8 @@
   let keyword: string = "";
   let result = [];
 
-  const saveApiKey = async () => {
-    window.localStorage.setItem("apiKey", apiKey);
-  };
-
   const search = async () => {
+    window.localStorage.setItem("apiKey", apiKey);
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${keyword}&key=${apiKey}`;
     const res = await axios.get(url);
     result = res.data.items;
@@ -19,15 +16,27 @@
 <main>
   <h2>Search Youtube movies</h2>
   <h3>api key</h3>
-  <input type="text" bind:value={apiKey} />
-  <input type="button" on:click={saveApiKey} value="キーを記憶する" />
+  <input type="text" bind:value={apiKey} class="apikey" />
   <h3>keyword</h3>
   <input type="url" bind:value={keyword} />
   <input type="button" on:click={search} value="検索" />
   <div>
     {#each result as item}
-      <h4>{item.snippet.title}</h4>
-      <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
+      <a href={`/view?id=${item.id.videoId}`}>
+        <h4>{item.snippet.title}</h4>
+        <img
+          src={item.snippet.thumbnails.high.url}
+          alt={item.snippet.title}
+          width={item.snippet.thumbnails.high.width}
+          height={item.snippet.thumbnails.high.height}
+        />
+      </a>
     {/each}
   </div>
 </main>
+
+<style lang="scss">
+  .apikey {
+    width: 50%;
+  }
+</style>
