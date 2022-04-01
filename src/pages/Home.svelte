@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Link } from "svelte-routing";
+
   export let name: string;
 </script>
 
@@ -8,6 +10,9 @@
     Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
     how to build Svelte apps.
   </p>
+  <ul>
+    <li><Link to="search">検索</Link></li>
+  </ul>
 </main>
 
 <style>

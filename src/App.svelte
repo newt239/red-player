@@ -6,7 +6,11 @@
 
 <main>
   <Router>
-    <Route path="" component={Home} name="world" />
-    <Route path="search" component={Search} />
+    <Route path="">
+      <Home name="world" />
+    </Route>
+    <Route path="search">
+      <Search />
+    </Route>
   </Router>
 </main>
