@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link } from "svelte-routing";
+  import { link } from "svelte-spa-router";
 
   export let name: string;
 </script>
@@ -11,7 +11,7 @@
     how to build Svelte apps.
   </p>
   <ul>
-    <li><Link to="search">検索</Link></li>
+    <li><a href="/search" use:link>検索</a></li>
   </ul>
 </main>
 

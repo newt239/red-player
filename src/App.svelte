@@ -1,16 +1,14 @@
 <script lang="ts">
-  import { Router, Route } from "svelte-routing";
+  import Router from "svelte-spa-router";
   import Home from "./pages/Home.svelte";
   import Search from "./pages/Search.svelte";
+
+  const routes = {
+    "/": Home,
+    "/search": Search,
+  };
 </script>
 
 <main>
-  <Router>
-    <Route path="">
-      <Home name="world" />
-    </Route>
-    <Route path="search">
-      <Search />
-    </Route>
-  </Router>
+  <Router {routes} />
 </main>

@@ -18,14 +18,11 @@
   <input type="text" bind:value={apiKey} />
   <h2>keyword</h2>
   <input type="url" bind:value={keyword} />
-  <input type="button" on:click={search} />
+  <input type="button" on:click={search} value="検索" />
   <div>
     {#each result as item}
       <h3>{item.snippet.title}</h3>
-      <img
-        src={item.snippet.thumbnails.high.url}
-        alt={item.snippet.thumbnails.high.url}
-      />
+      <img src={item.snippet.thumbnails.high.url} alt={item.snippet.title} />
     {/each}
   </div>
 </main>
