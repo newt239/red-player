@@ -1,9 +1,13 @@
 <script lang="ts">
   import axios from "axios";
 
-  let apiKey: string = "";
+  let apiKey: string = window.localStorage.getItem("apiKey");
   let keyword: string = "";
   let result = [];
+
+  const saveApiKey = async () => {
+    window.localStorage.setItem("apiKey", apiKey);
+  };
 
   const search = async () => {
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${keyword}&key=${apiKey}`;
@@ -16,6 +20,7 @@
   <h2>Search Youtube movies</h2>
   <h3>api key</h3>
   <input type="text" bind:value={apiKey} />
+  <input type="button" on:click={saveApiKey} value="キーを記憶する" />
   <h3>keyword</h3>
   <input type="url" bind:value={keyword} />
   <input type="button" on:click={search} value="検索" />
