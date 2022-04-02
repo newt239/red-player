@@ -2,6 +2,8 @@
   import { link } from "svelte-spa-router";
 </script>
 
-<header>
-  <h1><a href="/" use:link>tauri youtube player</a></h1>
-</header>
+<a href="/" use:link>
+  <header>
+    <h1>RED Player</h1>
+  </header>
+</a>

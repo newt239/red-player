@@ -6,8 +6,8 @@
   import axios from "axios";
 
   const options = {
+    width: "100vw",
     playerVars: {
-      autoplay: 1,
       rel: 0,
     },
   };
@@ -19,6 +19,14 @@
 </script>
 
 <main>
-  <YouTube videoId={parse($querystring).id} {options} />
-  <div />
+  <div class="video-wrapper">
+    <YouTube class="youtube" videoId={parse($querystring).id} {options} />
+  </div>
 </main>
+
+<style lang="scss" module>
+  .youtube iframe {
+    width: 100vw;
+    height: auto;
+  }
+</style>
