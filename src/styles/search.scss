@@ -18,18 +18,17 @@
     outline: none;
     flex-grow: 1;
     font-size: 1.5rem;
-    border-radius: 1rem 0 0 1rem;
-    padding: 0 1rem;
+    border-radius: .5rem 0 0 .5rem;
+    padding: .2rem .5rem;
     width: 50px;
   }
 
   .button-search {
     color: variable.$background-primary;
-    background-color: variable.$base-secondary;
+    background-color: variable.$base-primary;
     border: none;
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 0 .5rem .5rem 0;
     padding: 0 1rem;
-    font-size: 1.5rem;
     cursor: pointer;
   }
 }

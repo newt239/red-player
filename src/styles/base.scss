@@ -6,9 +6,15 @@ html {
   background-color: variable.$background-secondary;
   font-size: 16px;
   color: variable.$base-primary;
-  font-family: "Montserrat",
-    "BIZ UDPGothic",
-    sans-serif;
+  font-family: -apple-system,
+    "Montserrat",
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
   cursor: default;
 }
 

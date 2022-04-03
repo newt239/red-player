@@ -3,6 +3,8 @@
   import { apiKeyStore } from "../store";
   import axios from "axios";
 
+  import { Search } from "svelte-bootstrap-icons";
+
   let keyword: string = "";
   let result = [];
 
@@ -23,12 +25,7 @@
         bind:value={keyword}
         placeholder="Enter keyword"
       />
-      <input
-        class="button-search"
-        type="button"
-        on:click={search}
-        value="検索"
-      />
+      <button class="button-search" on:click={search}><Search /></button>
     </div>
   </div>
   <div class="search-result">
