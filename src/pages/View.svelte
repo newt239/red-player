@@ -8,6 +8,8 @@
   const options = {
     playerVars: {
       rel: 0,
+      controls: 0,
+      showinfo: 0,
     },
   };
   const movie = {
@@ -18,13 +20,9 @@
 </script>
 
 <main class="view">
-  <YouTube
-    class="youtube"
-    style={`iframe { aspect-ratio: 1 / 2; }`}
-    videoId={parse($querystring).id}
-    {options}
-  />
+  <YouTube class="youtube" videoId={parse($querystring).id} {options} />
   <div class="video-info">
+    <div class="video-controls" />
     <h2>Video Title</h2>
   </div>
 </main>
