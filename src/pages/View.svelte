@@ -6,7 +6,6 @@
   import axios from "axios";
 
   const options = {
-    width: "100vw",
     playerVars: {
       rel: 0,
     },
@@ -18,8 +17,17 @@
   onMount(() => {});
 </script>
 
-<main>
-  <div class="video-wrapper">
-    <YouTube class="youtube" videoId={parse($querystring).id} {options} />
+<main class="view">
+  <YouTube
+    class="youtube"
+    style={`iframe { aspect-ratio: 1 / 2; }`}
+    videoId={parse($querystring).id}
+    {options}
+  />
+  <div class="video-info">
+    <h2>Video Title</h2>
   </div>
 </main>
+
+<style>
+</style>
