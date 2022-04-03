@@ -15,16 +15,14 @@
   };
 </script>
 
-<div>
+<div class="wrapper">
   <HeaderComp />
-  <div class="wrapper">
+  <div class="container">
     <div class="tabGroup">
       <a class="tab" href="/config/" use:link><Sliders /></a>
       <a class="tab" href="/search/" use:link><Search /></a>
     </div>
-    <div class="content">
-      <Router {routes} />
-    </div>
+    <Router {routes} />
   </div>
 </div>
 

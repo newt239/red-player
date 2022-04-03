@@ -1,7 +1,79 @@
 @use "variable";
 
-.keyword {
-  color: variable.$base-primary;
-  background-color: variable.$background-secondary;
-  border: none;
+.search {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box {
+  width: calc(100% - 2rem);
+  margin: auto;
+  display: flex;
+  padding: 1rem;
+
+  .input-keyword {
+    color: variable.$base-primary;
+    background-color: variable.$background-primary;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 1.5rem;
+    border-radius: 1rem 0 0 1rem;
+    padding: 0 1rem;
+    width: 50px;
+  }
+
+  .button-search {
+    color: variable.$background-primary;
+    background-color: variable.$base-secondary;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: .5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: variable.$background-secondary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: variable.$base-secondary;
+  }
+
+  .movie-wrapper {
+    display: flex;
+    color: variable.$base-primary;
+
+    &:hover {
+      background-color: variable.$background-tertiary;
+    }
+
+    img {
+      width: 30%;
+      height: auto;
+    }
+
+    .movie-snippet {
+      padding: .5rem;
+
+      h4 {
+        margin: 0;
+      }
+    }
+  }
 }

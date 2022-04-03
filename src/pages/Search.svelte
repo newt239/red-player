@@ -13,20 +13,36 @@
   };
 </script>
 
-<main>
-  <h2>Search</h2>
-  <input class="keyword" type="url" bind:value={keyword} />
-  <input type="button" on:click={search} value="検索" />
-  <div>
+<main class="search">
+  <div class="search-header">
+    <h2>Search</h2>
+    <div class="search-box">
+      <input
+        class="input-keyword"
+        type="text"
+        bind:value={keyword}
+        placeholder="Enter keyword"
+      />
+      <input
+        class="button-search"
+        type="button"
+        on:click={search}
+        value="検索"
+      />
+    </div>
+  </div>
+  <div class="search-result">
     {#each result as item}
-      <a href={`/view/?id=${item.id.videoId}`} use:link>
-        <h4>{item.snippet.title}</h4>
+      <a class="movie-wrapper" href={`/view/?id=${item.id.videoId}`} use:link>
         <img
           src={item.snippet.thumbnails.high.url}
           alt={item.snippet.title}
           width={item.snippet.thumbnails.high.width}
           height={item.snippet.thumbnails.high.height}
         />
+        <div class="movie-snippet">
+          <h4>{item.snippet.title}</h4>
+        </div>
       </a>
     {/each}
   </div>
