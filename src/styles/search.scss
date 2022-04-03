@@ -1,0 +1,7 @@
+@use "variable";
+
+.keyword {
+  color: variable.$base-primary;
+  background-color: variable.$background-secondary;
+  border: none;
+}

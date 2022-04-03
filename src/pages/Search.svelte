@@ -14,9 +14,8 @@
 </script>
 
 <main>
-  <h2>Search Youtube movies</h2>
-  <h3>keyword</h3>
-  <input type="url" bind:value={keyword} />
+  <h2>Search</h2>
+  <input class="keyword" type="url" bind:value={keyword} />
   <input type="button" on:click={search} value="検索" />
   <div>
     {#each result as item}

@@ -23,10 +23,3 @@
     <YouTube class="youtube" videoId={parse($querystring).id} {options} />
   </div>
 </main>
-
-<style lang="scss" module>
-  .youtube iframe {
-    width: 100vw;
-    height: auto;
-  }
-</style>

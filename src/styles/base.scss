@@ -1,0 +1,66 @@
+@use "variable";
+@use "search";
+@use "view";
+
+body {
+  margin: 0;
+  font-size: 16px;
+  color: variable.$base-primary;
+  background-color: variable.$background-primary;
+  font-family: "Montserrat", "BIZ UDPGothic", sans-serif;
+  cursor: default;
+}
+
+header {
+  padding: .5rem;
+  text-align: center;
+  border-bottom: variable.$background-secondary 1px solid;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: variable.$brand-primary;
+  }
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+
+  .tabGroup {
+    .tab {
+      display: block;
+      color: variable.$base-primary;
+      padding: 0.8rem;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        aspect-ratio: 1 / 1;
+      }
+
+      &:hover {
+        background-color: variable.$background-secondary;
+      }
+    }
+  }
+
+  .content {
+    background-color: variable.$background-secondary;
+    flex-grow: 1;
+    padding: .5rem;
+  }
+}
+
+input {
+  color: variable.$base-primary;
+  background-color: variable.$background-secondary;
+  border: none;
+}

@@ -6,10 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
-
-const cssModules = require('svelte-preprocess-cssmodules');
-const { asMarkupPreprocessor } = require('svelte-as-markup-preprocessor');
-
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -26,7 +22,6 @@ function serve() {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
 			});
-
 			process.on('SIGTERM', toExit);
 			process.on('exit', toExit);
 		}
@@ -43,12 +38,10 @@ export default {
 	},
 	plugins: [
 		svelte({
-			preprocess: [
-				asMarkupPreprocessor([
-					sveltePreprocess({ sourceMap: !production }),
-				]),
-				cssModules(),
-			],
+			preprocess:
+				sveltePreprocess({
+					sourceMap: !production,
+				}),
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production,
@@ -63,7 +56,6 @@ export default {
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
-
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
