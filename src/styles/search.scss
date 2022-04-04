@@ -6,38 +6,35 @@
 }
 
 .search-box {
-  width: calc(100% - 2rem);
-  margin: auto;
   display: flex;
-  padding: 1rem;
+  padding: .5rem;
+  box-sizing: border-box;
 
   .input-keyword {
+    width: 50px;
+    padding: .2rem .5rem;
+    flex-grow: 1;
+    font-size: 1.5rem;
     color: variable.$base-primary;
     background-color: variable.$background-primary;
     border: none;
     outline: none;
-    flex-grow: 1;
-    font-size: 1.5rem;
-    border-radius: .5rem 0 0 .5rem;
-    padding: .2rem .5rem;
-    width: 50px;
   }
 
   .button-search {
+    padding: 0 .5rem;
     color: variable.$background-primary;
     background-color: variable.$base-primary;
     border: none;
-    border-radius: 0 .5rem .5rem 0;
-    padding: 0 1rem;
     cursor: pointer;
   }
 }
 
 .search-result {
   display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
+  flex-direction: column;
   flex-grow: 1;
   overflow-y: scroll;
   scrollbar-gutter: stable;

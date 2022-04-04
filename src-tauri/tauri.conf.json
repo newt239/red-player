@@ -54,8 +54,8 @@
     "windows": [
       {
         "title": "RED Player",
-        "width": 300,
-        "height": 450,
+        "width": 400,
+        "height": 600,
         "resizable": true,
         "fullscreen": false
       }
