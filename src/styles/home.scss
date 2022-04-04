@@ -1,0 +1,25 @@
+@use "variable";
+
+.home {
+  .menuGrid {
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 1rem;
+
+    .menu-card {
+      display: block;
+      box-sizing: border-box;
+      width: 50%;
+      height: 10vh;
+      padding: .5rem;
+      color: variable.$background-primary;
+      background: variable.$base-primary;
+
+      &:hover {
+        background-color: variable.$base-secondary;
+      }
+    }
+  }
+}

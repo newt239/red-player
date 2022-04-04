@@ -18,9 +18,16 @@
 <main class="search">
   <div class="search-header">
     <h2>Search</h2>
-    <div class="search-box">
-      <input class="input-keyword" type="text" bind:value={keyword} />
-      <button class="button-search" on:click={search}><Search /></button>
+    <div class="input-box">
+      <input
+        class="input-text"
+        type="text"
+        placeholder="Enter keyword"
+        bind:value={keyword}
+      />
+      <button class="button-action" alt="search" on:click={search}
+        ><Search /></button
+      >
     </div>
   </div>
   <div class="search-result">

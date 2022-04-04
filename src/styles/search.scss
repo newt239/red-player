@@ -5,31 +5,6 @@
   flex-direction: column;
 }
 
-.search-box {
-  display: flex;
-  padding: .5rem;
-  box-sizing: border-box;
-
-  .input-keyword {
-    width: 50px;
-    padding: .2rem .5rem;
-    flex-grow: 1;
-    font-size: 1.5rem;
-    color: variable.$base-primary;
-    background-color: variable.$background-primary;
-    border: none;
-    outline: none;
-  }
-
-  .button-search {
-    padding: 0 .5rem;
-    color: variable.$background-primary;
-    background-color: variable.$base-primary;
-    border: none;
-    cursor: pointer;
-  }
-}
-
 .search-result {
   display: flex;
   width: 100%;

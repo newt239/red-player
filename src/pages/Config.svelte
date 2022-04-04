@@ -2,6 +2,8 @@
   import { link } from "svelte-spa-router";
   import { apiKeyStore } from "../store";
 
+  import { Save } from "svelte-bootstrap-icons";
+
   let apiKey: string = "";
   apiKeyStore.subscribe((value) => {
     apiKey = value;
@@ -9,14 +11,14 @@
 </script>
 
 <main>
-  <h2>API key</h2>
-  <input type="text" bind:value={apiKey} />
-  <input
-    type="button"
-    value="更新"
-    on:click={() => apiKeyStore.update(apiKey)}
-  />
-  <ul>
-    <li><a href="/search/" use:link>検索</a></li>
-  </ul>
+  <h2>Settings</h2>
+  <h3>API Key</h3>
+  <div class="input-box">
+    <input class="input-text" type="text" bind:value={apiKey} />
+    <button
+      class="button-action"
+      alt="save"
+      on:click={() => apiKeyStore.update(apiKey)}><Save /></button
+    >
+  </div>
 </main>
