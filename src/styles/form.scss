@@ -1,0 +1,35 @@
+@use "variable";
+
+.inputBox {
+  display: flex;
+  padding: .5rem;
+
+  .inputTextBlock {
+    width: 50px;
+    padding: .2rem .5rem;
+    flex-grow: 1;
+    color: variable.$base-primary;
+    background-color: variable.$background-primary;
+    border: none;
+    outline: none;
+  }
+
+  .actionButton {
+    padding: .3rem .5rem;
+    color: variable.$background-primary;
+    background-color: variable.$base-primary;
+    border: none;
+    cursor: pointer;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}

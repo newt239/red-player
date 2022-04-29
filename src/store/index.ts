@@ -12,3 +12,11 @@ const createApiKeyStore = () => {
 };
 
 export const apiKeyStore = createApiKeyStore();
+
+export const globalConfigStore = writable(JSON.parse(window.localStorage.getItem("globalConfig")) || {
+  video: {
+    autoplay: false
+  }
+});
+
+export const videoInfoListStore = writable([]);

@@ -1,10 +1,21 @@
 @use "variable";
 @use "home";
+@use "form";
 @use "search";
 @use "view";
 
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
+}
+
+body {
+  margin: 0;
   color: variable.$base-primary;
   background-color: variable.$background-secondary;
   font-family: -apple-system,
@@ -19,16 +30,11 @@ html {
   cursor: default;
 }
 
-body {
-  margin: 0;
-}
-
 header {
   padding: .5rem;
   text-align: center;
   background-color: variable.$background-primary;
   border-bottom: variable.$background-secondary 1px solid;
-
 
   h1 {
     margin: 0;
@@ -113,29 +119,5 @@ p {
       width: 0;
     }
 
-  }
-}
-
-.input-box {
-  display: flex;
-  padding: .5rem;
-  box-sizing: border-box;
-
-  .input-text {
-    width: 50px;
-    padding: .2rem .5rem;
-    flex-grow: 1;
-    color: variable.$base-primary;
-    background-color: variable.$background-primary;
-    border: none;
-    outline: none;
-  }
-
-  .button-action {
-    padding: .3rem .5rem;
-    color: variable.$background-primary;
-    background-color: variable.$base-primary;
-    border: none;
-    cursor: pointer;
   }
 }

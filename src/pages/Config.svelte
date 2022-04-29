@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { link } from "svelte-spa-router";
-  import { apiKeyStore } from "../store";
+  import { apiKeyStore, globalConfigStore } from "../store";
 
   import { Save } from "svelte-bootstrap-icons";
 
@@ -13,12 +12,25 @@
 <main>
   <h2>Settings</h2>
   <h3>API Key</h3>
-  <div class="input-box">
-    <input class="input-text" type="text" bind:value={apiKey} />
+  <div class="inputBox">
+    <input class="inputTextBlock" type="text" bind:value={apiKey} />
     <button
-      class="button-action"
+      class="actionButton"
       alt="save"
       on:click={() => apiKeyStore.update(apiKey)}><Save /></button
     >
+  </div>
+  <div class="inputBox">
+    <label for="autoPlayState" class="checkboxLabel">
+      <input
+        id="autoPlayState"
+        type="checkbox"
+        checked={$globalConfigStore.video.autoplay}
+        on:change={() =>
+          ($globalConfigStore.video.autoplay =
+            !$globalConfigStore.video.autoplay)}
+      />
+      <span>enable auto play when load view page</span>
+    </label>
   </div>
 </main>
